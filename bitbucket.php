@@ -1,12 +1,13 @@
 <?
 /*************************************************************************
 
-Plugin Name:  Bitbucket issue manager
-Plugin URI:   http://gabrielgil.es/bitbucket-issue-manager
-Description:  Adds useful widgets to track your recent bitbucket issues
-Version:      0.6.7
-Author:       Gabriel Gil
-Author URI:   http://gabrielgil.es/
+Plugin Name:		Bitbucket issue manager
+Plugin URI:			http://gabrielgil.es/bitbucket-issue-manager
+GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
+Description:		Adds useful widgets to track your recent bitbucket issues
+Version:			0.6.8
+Author:				Gabriel Gil
+Author URI:			http://gabrielgil.es/
 
 **************************************************************************/
 
