@@ -11,7 +11,7 @@ function bitbucket_resolved_issues_content()
 	global $bitbucket_username;
 	global $bitbucket_respository;
 	
-    $all_issues = json_decode(file_get_contents_curl('https://bitbucket.org/api/1.0/repositories/' . $bitbucket_username . '/' . $bitbucket_respository . '/issues?status=resolved'));
+    $all_issues = json_decode(file_get_contents_curl('https://bitbucket.org/api/1.0/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/issues?status=resolved'));
     
     // Shows info if there is any issue right now.
     if ( $all_issues->count < 1 )

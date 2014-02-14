@@ -5,17 +5,65 @@ Plugin Name:		Bitbucket issue manager
 Plugin URI:			http://gabrielgil.es/bitbucket-issue-manager
 GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 Description:		Adds useful widgets to track your recent bitbucket issues
-Version:			0.6.8
+Version:			0.7
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
 
 **************************************************************************/
 
-$bitbucket_username		=	'';
-$bitbucket_respository	=	'';
 
-define('BITBUCKET_USERNAME',	$bitbucket_username);
-define('BITBUCKET_REPOSITORY',	$bitbucket_respository);
+add_action( 'admin_init', function ()
+{
+	// Add the section to reading settings so we can add our
+ 	// fields to it
+ 	add_settings_section(
+		'bim-settings-section',
+		'Bitbucket Issue Manager Settings',
+		'bim_setting_section_callback',
+		'general'
+	);
+	
+	add_settings_field(
+		'bim-username',
+		'BitBucket Username',
+		'bim_username_field_callback',
+		'general',
+		'bim-settings-section'
+	);
+	register_setting( 'general', 'bim-username' );
+	
+	add_settings_field(
+		'bim-respository',
+		'BitBucket Respository',
+		'bim_respository_field_callback',
+		'general',
+		'bim-settings-section'
+	);
+	
+	register_setting( 'general', 'bim-respository' );
+
+});
+
+
+function bim_setting_section_callback ()
+{
+	echo '<p>Bitbucket Issue Manager</p>';
+}
+
+
+function bim_username_field_callback ()
+{
+	echo '<input id="bim-username" name="bim-username" type="text" value="' . get_option( 'bim-username' ) . '" />';
+}
+
+function bim_respository_field_callback ()
+{
+	echo '<input id="bim-respository" name="bim-respository" type="text" value="' . get_option( 'bim-respository' ) . '" />';
+}
+
+
+define('BITBUCKET_USERNAME',	get_option( 'bim-username' ));
+define('BITBUCKET_REPOSITORY',	get_option( 'bim-respository' ));
 
 
 /*************************************************************************
