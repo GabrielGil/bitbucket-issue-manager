@@ -1,3 +1,3 @@
-# Wordpress BitBucket Issues Manager
+# Wordpress BitBucket Issue Manager
 
-THis plugins easily allows you to track the lastest issues (Opened and resolved) of your BitBucket repository.
+This plugins easily allows you to track the lastest issues (Opened and resolved) of your BitBucket repository.
