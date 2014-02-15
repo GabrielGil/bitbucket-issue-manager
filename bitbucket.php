@@ -1,16 +1,76 @@
-<?
+<?php
+
 /*************************************************************************
 
 Plugin Name:		Bitbucket issue manager
 Plugin URI:			http://gabrielgil.es/bitbucket-issue-manager
-GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 Description:		Adds useful widgets to track your recent bitbucket issues
 Version:			0.7
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
+License:			GPL2
+GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 
 **************************************************************************/
 
+
+/*************************************************************************
+
+						INDEX
+					
+			* -> License
+			* -> Options
+			* -> Dashboard widget
+			* ----> Hook Widget
+			* ----> Add Content
+			* -> Plugin Options Area
+			* ----> Options link on plugins list
+			* ----> Owner and repository name option field
+			* -> Helper functions
+
+
+**************************************************************************/
+
+
+
+/*************************************************************************
+
+						LICENSE
+
+**************************************************************************/
+
+
+/*  Copyright 2014  Gabriel Gil  (email : hello@gabrielgil.es)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+
+
+/*************************************************************************
+
+						OPTIONS FIELDS
+
+**************************************************************************/
+
+
+/*
+ * Add settings fields to general settings page
+ * 
+ * Hooks into admin_init to add options to save the username and
+ * repository names.
+ */
 
 add_action( 'admin_init', function ()
 {
@@ -23,6 +83,7 @@ add_action( 'admin_init', function ()
 		'general'
 	);
 	
+	// Add the username field
 	add_settings_field(
 		'bim-username',
 		'BitBucket Username',
@@ -30,6 +91,7 @@ add_action( 'admin_init', function ()
 		'general',
 		'bim-settings-section'
 	);
+	// Register the field so we can sanitize it.
 	register_setting( 'general', 'bim-username' );
 	
 	add_settings_field(
@@ -39,17 +101,21 @@ add_action( 'admin_init', function ()
 		'general',
 		'bim-settings-section'
 	);
-	
 	register_setting( 'general', 'bim-respository' );
 
 });
 
 
+/*
+ * Callback functions
+ * 
+ * The following functions prints the info, and the input elements.
+ */
+
 function bim_setting_section_callback ()
 {
-	echo '<p>Bitbucket Issue Manager</p>';
+	echo '<p>Here you can set you BitBucket username and the repository you want manage.</p>';
 }
-
 
 function bim_username_field_callback ()
 {
@@ -61,26 +127,9 @@ function bim_respository_field_callback ()
 	echo '<input id="bim-respository" name="bim-respository" type="text" value="' . get_option( 'bim-respository' ) . '" />';
 }
 
-
+// Define constrants with the saved username and repository.
 define('BITBUCKET_USERNAME',	get_option( 'bim-username' ));
 define('BITBUCKET_REPOSITORY',	get_option( 'bim-respository' ));
-
-
-/*************************************************************************
-
-						INDEX
-					
-			* -> Options
-			* -> Dashboard widget
-			* ----> Hook Widget
-			* ----> Add Content
-			* -> Plugin Options Area
-			* ----> Options link on plugins list
-			* ----> Owner and repository name option field
-			* -> Helper functions
-
-
-**************************************************************************/
 
 
 
