@@ -2,14 +2,14 @@
 
 /*************************************************************************
 
-Plugin Name:		Bitbucket issue manager
+Plugin Name:		Bitbucket Issue Manager
 Plugin URI:			http://gabrielgil.es/bitbucket-issue-manager
-Description:		Adds useful widgets to track your recent bitbucket issues
+Description:		Adds useful widgets to track your recent bitbucket issues. I pretend add more features soon. (Front-end widgets, issue listing page etc). That's why the plugin is called <strong>Manager</strong> and not just <strong>Dashboard widgets</strong>.
 Version:			0.8.1
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
 License:			GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI:		http://www.gnu.org/licenses/gpl-2.0.html
 GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 
 **************************************************************************/
@@ -141,7 +141,8 @@ define('BITBUCKET_REPOSITORY',	get_option( 'bim-respository' ));
  */
 
 // Register the hook
-register_uninstall_hook( __FILE__, 'uninstall_bim');
+if ( function_exists('register_uninstall_hook') )
+	register_uninstall_hook( __FILE__, 'uninstall_bim');
 
 // Callback function
 function uninstall_bim() {
