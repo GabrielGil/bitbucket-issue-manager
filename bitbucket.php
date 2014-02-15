@@ -120,12 +120,12 @@ function bim_setting_section_callback ()
 
 function bim_username_field_callback ()
 {
-	echo '<input id="bim-username" name="bim-username" type="text" value="' . get_option( 'bim-username' ) . '" />';
+	echo '<input id="bim-username" name="bim-username" type="text" value="' . get_option( 'bim-username' ) . '" class="regular-text code" />';
 }
 
 function bim_respository_field_callback ()
 {
-	echo '<input id="bim-respository" name="bim-respository" type="text" value="' . get_option( 'bim-respository' ) . '" />';
+	echo '<input id="bim-respository" name="bim-respository" type="text" value="' . get_option( 'bim-respository' ) . '" class="regular-text code" />';
 }
 
 // Define constrants with the saved username and repository.
