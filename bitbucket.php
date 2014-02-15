@@ -8,7 +8,8 @@ Description:		Adds useful widgets to track your recent bitbucket issues
 Version:			0.7
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
-License:			GPL2
+License:			GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 
 **************************************************************************/
