@@ -5,7 +5,7 @@
 Plugin Name:		Bitbucket issue manager
 Plugin URI:			http://gabrielgil.es/bitbucket-issue-manager
 Description:		Adds useful widgets to track your recent bitbucket issues
-Version:			0.7
+Version:			0.8.1
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
 License:			GPLv2 or later
@@ -131,6 +131,31 @@ function bim_respository_field_callback ()
 // Define constrants with the saved username and repository.
 define('BITBUCKET_USERNAME',	get_option( 'bim-username' ));
 define('BITBUCKET_REPOSITORY',	get_option( 'bim-respository' ));
+
+
+/*
+ * Uninstall hook
+ * 
+ * Register the uninstall hook to be called when the plugin is uninstalled
+ * via the Plugins page.
+ */
+
+// Register the hook
+register_uninstall_hook( __FILE__, 'uninstall_bim');
+
+// Callback function
+function uninstall_bim() {
+	//if uninstall not called from WordPress exit
+	if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) 
+	    exit();
+	
+	// For Single site
+	if ( !is_multisite() ) 
+	{
+	    delete_option( 'bim-username' );
+	    delete_option( 'bim-respository' );
+	}
+}
 
 
 
