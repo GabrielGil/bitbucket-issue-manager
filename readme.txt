@@ -48,6 +48,9 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
+= 0.8.1 =
+* Added hability to delete self data on uninstall.
+
 = 0.8 =
 * Initial release on Wordpress.org
 
