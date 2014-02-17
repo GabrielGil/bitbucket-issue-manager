@@ -21,6 +21,7 @@ GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 					
 			* -> License
 			* -> Options
+			* -> Notices
 			* -> Dashboard widget
 			* ----> Hook Widget
 			* ----> Add Content
@@ -96,15 +97,31 @@ add_action( 'admin_init', function ()
 	register_setting( 'general', 'bim-username' );
 	
 	add_settings_field(
-		'bim-respository',
-		'BitBucket Respository',
-		'bim_respository_field_callback',
+		'bim-repository',
+		'BitBucket Repository',
+		'bim_repository_field_callback',
 		'general',
 		'bim-settings-section'
 	);
-	register_setting( 'general', 'bim-respository' );
+	register_setting( 'general', 'bim-repository' );
 
 });
+
+
+/*
+ * Delete errors
+ *
+ * Delete wrong options saved on previous plugin version.
+ */
+
+add_action( 'admin_init', function ()
+{
+	if(get_option( 'bim-respository' )){
+		update_option( 'bim-repository', get_option( 'bim-respository' ));
+		delete_option( 'bim-respository' );
+	}
+});
+
 
 
 /*
@@ -114,8 +131,9 @@ add_action( 'admin_init', function ()
  */
 
 function bim_setting_section_callback ()
-{
-	echo '<p>Here you can set you BitBucket username and the repository you want manage.</p>';
+{ 
+	echo '<a id="bim"></a>
+		<p>Here you can set you BitBucket username and the repository you want manage.</p>';
 }
 
 function bim_username_field_callback ()
@@ -123,14 +141,14 @@ function bim_username_field_callback ()
 	echo '<input id="bim-username" name="bim-username" type="text" value="' . get_option( 'bim-username' ) . '" class="regular-text code" />';
 }
 
-function bim_respository_field_callback ()
+function bim_repository_field_callback ()
 {
-	echo '<input id="bim-respository" name="bim-respository" type="text" value="' . get_option( 'bim-respository' ) . '" class="regular-text code" />';
+	echo '<input id="bim-repository" name="bim-repository" type="text" value="' . get_option( 'bim-repository' ) . '" class="regular-text code" />';
 }
 
 // Define constrants with the saved username and repository.
 define('BITBUCKET_USERNAME',	get_option( 'bim-username' ));
-define('BITBUCKET_REPOSITORY',	get_option( 'bim-respository' ));
+define('BITBUCKET_REPOSITORY',	get_option( 'bim-repository' ));
 
 
 /*
@@ -154,7 +172,7 @@ function uninstall_bim() {
 	if ( !is_multisite() ) 
 	{
 	    delete_option( 'bim-username' );
-	    delete_option( 'bim-respository' );
+	    delete_option( 'bim-repository' );
 	}
 }
 
