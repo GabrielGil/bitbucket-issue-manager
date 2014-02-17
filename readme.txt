@@ -1,10 +1,10 @@
 === Bitbucket issue manager ===
 Contributors: gabrielbs
 Donate link: http://goo.gl/v9CW1R
-Tags: bitbucket, widgets, dashboard, manage, repository
-Requires at least: 3.5
+Tags: bitbucket, widgets, dashboard,
+Requires at least: 3
 Tested up to: 3.8.1
-Stable tag: 1
+Stable tag: 0.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,12 +12,20 @@ Check your latest issues from BitBucket directly on your WordPress dashboard.
 
 == Description ==
 
-With this plugin you can easily check your latest issues on BitBucket. The recently created and the solved ones.
+With this plugin you can easily check your latest issues on BitBucket right on your Dashboard.
+The recently created and the solved ones.
 
 There are two widgets available after install:
 
-*	Recently opened issues
-*	Recently closed issues
+* Recently opened issues
+* Recently closed issues
+
+= Upcoming features =
+
+* Issue listing page.
+* Front-end widget
+* Issue emmbedding shortcode
+* Auto-issue linking on posts.
 
 == Installation ==
 
@@ -40,16 +48,18 @@ Please, make sure your repository issues are public.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Example General Settings page showing the BitBucket issue manager fields.
 
 == Changelog ==
 
+= 0.8.2 =
+* Fixes a misspelled opdtion name and properly deletes it (Will stop deleting the wrong name
+on version 1, and the value will be stored on your db for ever if you don't update before
+that version).
+* Added admin notice when the user or repo are not set in General Settings page.
+
 = 0.8.1 =
-* Added hability to delete self data on uninstall.
+* Added hability to delete self data on uninstall. 
 
 = 0.8 =
 * Initial release on Wordpress.org
@@ -58,6 +68,11 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 * First stable version with Settings API
 
 == Upgrade Notice ==
+
+= 0.8.2 =
+Notices the user on the Dashboard if the username or repository name are not set.
+First version which fixes the error on previous versions about one option name. The plugin
+will be fixing this error until the release of version 1.
 
 = 0.8 =
 First release. You should get it if you use BitBucket. ;)
