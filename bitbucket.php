@@ -124,6 +124,26 @@ add_action( 'admin_init', function ()
 
 
 
+/*************************************************************************
+
+						NOTICES
+
+**************************************************************************/
+
+
+if ( empty(get_option( 'bim-username' )) || empty(get_option( 'bim-repository' )) )
+{
+	add_action( 'admin_notices', function ()
+	{
+		?>
+	    <div class="updated">
+	        <p><?php printf( __( 'Config Bitbucket <b>username</b> and the <b>repository</b> you want to track under <b>Settings > <a href="%s">General</a></b> options page!', 'bim' ), site_url('/wp-admin/options-general.php') . '#bim' ); ?></p>
+	    </div>
+	    <?php
+	});
+}
+
+
 /*
  * Callback functions
  * 
