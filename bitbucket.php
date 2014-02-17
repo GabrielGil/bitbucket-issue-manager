@@ -5,7 +5,7 @@
 Plugin Name:		Bitbucket Issue Manager
 Plugin URI:			http://gabrielgil.es/bitbucket-issue-manager
 Description:		Adds useful widgets to track your recent bitbucket issues. I pretend add more features soon. (Front-end widgets, issue listing page etc). That's why the plugin is called <strong>Manager</strong> and not just <strong>Dashboard widgets</strong>.
-Version:			0.8.1
+Version:			0.8.2
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
 License:			GPLv2 or later
@@ -131,7 +131,7 @@ add_action( 'admin_init', function ()
 **************************************************************************/
 
 
-if ( empty(get_option( 'bim-username' )) || empty(get_option( 'bim-repository' )) )
+if ( !get_option( 'bim-username' ) || !get_option( 'bim-repository' ) )
 {
 	add_action( 'admin_notices', function ()
 	{
