@@ -10,7 +10,6 @@ function bitbucket_pending_issues_content()
 {
 	
 	$bitbucket_request_uri = 'https://bitbucket.org/api/1.0/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/issues?status=!resolved';
-	
     $all_issues = json_decode(file_get_contents_curl($bitbucket_request_uri));
     
     // Shows info if there is any issue right now.
