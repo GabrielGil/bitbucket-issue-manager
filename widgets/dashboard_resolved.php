@@ -28,7 +28,7 @@ function bitbucket_resolved_issues_content()
 	    // Display it up
 	    echo '<ul>';
 	    
-	    foreach ($all_issues as $issue) {
+	    foreach ($all_issues-> as $issue) {
 	    	echo '<li>';
 	    	echo '<p>';
 	    	echo '<span style="float:right;" ><strong>' . human_time_diff(strtotime($issue->created_on)) . '</strong></span>';
