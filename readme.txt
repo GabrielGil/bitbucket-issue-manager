@@ -1,4 +1,4 @@
-=== Bitbucket issue manager ===
+=== Bitbucket Issue Manager ===
 Contributors: gabrielbs
 Donate link: http://goo.gl/v9CW1R
 Tags: bitbucket, widgets, dashboard,
@@ -51,6 +51,9 @@ Please, make sure your repository issues are public.
 1. Example General Settings page showing the BitBucket issue manager fields.
 
 == Changelog ==
+
+= 0.8.3 =
+* Now the issue date is shown using `human_diff_time()`. (e.g. *5 hours ago* instead *02-18-2013*)
 
 = 0.8.2 =
 * Fixes a misspelled opdtion name and properly deletes it (Will stop deleting the wrong name
