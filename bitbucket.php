@@ -67,11 +67,15 @@ GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 **************************************************************************/
 
 
-/*
- * Add settings fields to general settings page
- * 
+/**
+ * Add settings fields to general settings page.
+ *
  * Hooks into admin_init to add options to save the username and
  * repository names.
+ *
+ * @since 0.7
+ *
+ * @return null Description.
  */
 
 add_action( 'admin_init', function ()
