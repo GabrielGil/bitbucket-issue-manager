@@ -19,7 +19,7 @@ function bitbucket_pending_issues_content()
 	    echo '<h4>No hay incidencias pendientes.</h4><p>Visita la página de incidencias del proyecto que has indicado en la página de opciones y tenlas a un vistazo de tu Wordpress.</p>';
 		return;
     
-    } elseif ( $all_issues > 0 )
+    } elseif ( $all_issues->count > 0 )
     {
     
 	    // Just the last five (Delegate on the endpoint)
