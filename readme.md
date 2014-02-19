@@ -18,6 +18,12 @@ At the moment, there are two widgets available after install:
 * Issue emmbedding shortcode
 * Auto-issue linking on posts.
 
+## ¿Sugestions?
+
+Do you have any idea that think could be great for this plugin? Miss some feature? Please, [open an issue on GitHub](https://github.com/GabrielGil/bitbucket-issue-manager/issues) repository or add a new [support ticket](https://wordpress.org/support/plugin/bitbucket-issue-manager) on the [plugin WordPress page](https://wordpress.org/plugin/bitbucket-issue-manager) with your idea. I would love to hear you words.
+
+You can also wirte me directly at hellogabrielgil (dot) es
+
 
 ## Translations
 
