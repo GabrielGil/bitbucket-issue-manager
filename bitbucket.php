@@ -62,6 +62,20 @@ GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 
 /*************************************************************************
 
+						LOCALIZATION
+
+**************************************************************************/
+
+
+function myplugin_init() {
+	load_plugin_textdomain( 'bim', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action('plugins_loaded', 'myplugin_init');
+
+
+
+/*************************************************************************
+
 						OPTIONS FIELDS
 
 **************************************************************************/
@@ -141,7 +155,7 @@ if ( !get_option( 'bim-username' ) || !get_option( 'bim-repository' ) )
 	{
 		?>
 	    <div class="updated">
-	        <p><?php printf( __( 'Config Bitbucket <b>username</b> and the <b>repository</b> you want to track under <b>Settings > <a href="%s">General</a></b> options page!', 'bim' ), site_url('/wp-admin/options-general.php') . '#bim' ); ?></p>
+	        <p><?php printf( __( 'Config Bitbucket username and the repository you want to track under Settings, General options page!', 'bim' ), site_url('/wp-admin/options-general.php') . '#bim' ); ?></p>
 	    </div>
 	    <?php
 	});
@@ -157,7 +171,7 @@ if ( !get_option( 'bim-username' ) || !get_option( 'bim-repository' ) )
 function bim_setting_section_callback ()
 { 
 	echo '<a id="bim"></a>
-		<p>Here you can set you BitBucket username and the repository you want manage.</p>';
+		<p>' . __( 'Here you can set you BitBucket username and the repository you want manage.', 'bim') . '</p>';
 }
 
 function bim_username_field_callback ()
@@ -220,13 +234,13 @@ add_action('wp_dashboard_setup', function ()
 {
 	wp_add_dashboard_widget (
 		'bitbucket_resolved_issues',
-		__('Últimas incidencias resueltas'),
+		__('Last solved issues', 'bim'),
 		'bitbucket_resolved_issues_content'
 	);
 	
 	wp_add_dashboard_widget(
 		'bitbucket_pending_issues',
-		__('Últimas incidencias pendientes'),
+		__('Last pending issues', 'bim'),
 		'bitbucket_pending_issues_content'
 	);
 });
@@ -268,43 +282,11 @@ add_filter('plugin_action_links', function ($links, $file) {
  
     if ( $file == 'bitbucket-issue-manager/bitbucket.php' ) {
         /* Insert the link at the end*/
-        $links['settings'] = sprintf( '<a href="%s"> %s </a>', admin_url( 'options-general.php' ), __( 'Settings', 'plugin_domain' ) );
+        $links['settings'] = sprintf( '<a href="%s"> %s </a>', admin_url( 'options-general.php#bim' ), __( 'Settings', 'bim' ) );
     }
     return $links;
  
 }, 10, 2);
-
-
-
-/*
- * Options Page
- *
- * Creates the options page to store the Client ID
- */
-
-add_action('admin_init', 'seo_meta_description_register');
-
-function seo_meta_description_register ()
-{
-	register_setting('reading', 'meta_description', 'sanitize_html');
-}
-
-function sanitize_html ($input)
-{
-	return strip_tags(substr($input, 0, 160));
-}
-
-add_action( 'admin_menu', 'seo_meta_description' );
-
-function seo_meta_description()
-{
-	add_settings_field( 'meta_description', __('Default description for the meta tag'), 'description_input_area', 'reading' );
-	
-	//add_settings_section( 'test-id-setting', 'Title of my section', 'test_output', 'general' );
-	function description_input_area($args){
-		echo '<textarea name="meta_description" rows="5" cols="50" id="meta_description" class="large-text code">'.get_option('meta_description').'</textarea>';
-	}
-}
 
 
 

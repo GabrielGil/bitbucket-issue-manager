@@ -15,7 +15,8 @@ function bitbucket_pending_issues_content()
     // Shows info if there is any issue right now.
     if ( $all_issues->count < 1 )
     {
-	    echo '<h4>No hay incidencias pendientes.</h4><p>Visita la página de incidencias del proyecto que has indicado en la página de opciones y tenlas a un vistazo de tu Wordpress.</p>';
+	    echo '<h4>' . __( 'No pending issues.', 'bim') . '</h4><p>' . __( 'Nothing to do! Add issues on your Bitbucket repository page.', 'bim' ) . '</p>';
+	    // echo '<h4>' . __( 'No pending issues.') . '</h4><p>Visita la página de incidencias del proyecto que has indicado en la página de opciones y tenlas a un vistazo de tu Wordpress.</p>';
 		return;
     
     } elseif ( $all_issues->count > 0 )
@@ -43,7 +44,7 @@ function bitbucket_pending_issues_content()
 		
 		echo '<ul>';
 		
-		echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/gabrielgil/odd-barcelona/issues">Ver todas en Bitbucket</a>';
+		echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues">Ver todas en Bitbucket</a>';
 	
 	} else
 	{
