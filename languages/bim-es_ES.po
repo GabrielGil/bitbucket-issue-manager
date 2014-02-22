@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Bitbucket Issue Manager v0.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-22 18:24:21+0000\n"
+"PO-Revision-Date: 2014-02-22 20:53:47+0000\n"
 "Last-Translator: gabriel <gabriel@gabrielgil.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,38 +20,76 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: bitbucket.php:158
+#: bitbucket.php:167
 #@ bim
 msgid "Config Bitbucket username and the repository you want to track under Settings, General options page!"
 msgstr "Configura tu <b>usuario</b> y <b>repositorio</b> en la página de Ajustes > <a href=\"http://gabrielgil.es\">General</a>."
 
-#: bitbucket.php:174
+#: bitbucket.php:183
 #@ bim
 msgid "Here you can set you BitBucket username and the repository you want manage."
 msgstr "Aquí puedes configurar tu usuario y repositorio de BitBucket."
 
-#: bitbucket.php:237
+#: bitbucket.php:246
 #@ bim
 msgid "Last solved issues"
 msgstr "Ultimas incidencias resueltas"
 
-#: bitbucket.php:243
+#: bitbucket.php:252
 #@ bim
 msgid "Last pending issues"
 msgstr "Últimas incidencias pendientes"
 
-#: bitbucket.php:285
+#: bitbucket.php:294
 #@ bim
 msgid "Settings"
 msgstr "Ajustes"
 
-#: widgets/dashboard_pending.php:18
+#: widgets/dashboard_pending.php:24
 #@ bim
 msgid "No pending issues."
 msgstr "No hay incidencias pendientes."
 
-#: widgets/dashboard_pending.php:18
+#: widgets/dashboard_pending.php:24
 #@ bim
 msgid "Nothing to do! Add issues on your Bitbucket repository page."
 msgstr "Nada que hacer! Añade incidencias en tu repositorio de Bitbucket."
+
+#: class/bitbucket.general.php:13
+#@ bim
+msgid "Your issues are private!"
+msgstr "Tus incidencias son privadas!"
+
+#: class/bitbucket.general.php:14
+#, php-format
+#@ bim
+msgid "Check your settings and make it public in your <a target=\"_blank\" href=\"%s\">bitbucket admin page</a>"
+msgstr "Comprueba tus ajustes y haz tus incidencias publicas en la <a target=\"_blank\" href=\"%s\">página de administración de Bitbucket</a>"
+
+#: class/bitbucket.general.php:20
+#@ bim
+msgid "Unable to find your repository"
+msgstr "No se ha podido encontrar el repositorio."
+
+#: class/bitbucket.general.php:23
+#, php-format
+#@ bim
+msgid "Check your username and repository name on the <a href=\"%s\">Settings -> General</a> page."
+msgstr "Comprueba tu usuario y repositorio en <a href=\"%s\">Ajustes -> General</a>."
+
+#: widgets/dashboard_pending.php:32
+#: widgets/dashboard_resolved.php:33
+#@ bim
+msgid "View all on Bitbucket's site"
+msgstr "Ver todas en Bitbucket"
+
+#: widgets/dashboard_resolved.php:25
+#@ bim
+msgid "No solved issues."
+msgstr "No hay incidencias resueltas."
+
+#: widgets/dashboard_resolved.php:25
+#@ bim
+msgid "You didn't solved anything! Resolve issues on your Bitbucket repository page."
+msgstr "No has hecho nada! Resuelve alguna incidencia en tu repositorio de Bitbucket."
 

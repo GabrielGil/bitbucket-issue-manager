@@ -22,7 +22,7 @@ function bitbucket_resolved_issues_content()
     
     if ( count($issues->issues) < 1 )
     {
-	    echo '<h4>' . __( 'No pending issues.', 'bim') . '</h4><p>' . __( 'Nothing to do! Add issues on your Bitbucket repository page.', 'bim' ) . '</p>';
+	    echo '<h4>' . __( 'No solved issues.', 'bim') . '</h4><p>' . __( 'You didn\'t solved anything! Resolve issues on your Bitbucket repository page.', 'bim' ) . '</p>';
 		return;
     
     }
@@ -30,5 +30,5 @@ function bitbucket_resolved_issues_content()
 	// List issues
 	Bitbucket_Issue::print_dashboard_issue_listing( $issues );
 		
-	echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues?status=resolved">Ver todas en Bitbucket</a>';
+	echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues?status=resolved">' . __( 'View all on Bitbucket\'s site', 'bim' ) .'</a>';
 }

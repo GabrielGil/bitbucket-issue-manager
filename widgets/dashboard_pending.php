@@ -29,6 +29,6 @@ function bitbucket_pending_issues_content() {
 	// List issues
 	Bitbucket_Issue::print_dashboard_issue_listing( $issues );
 		
-	echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues?status=!resolved">Ver todas en Bitbucket</a>';
+	echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues?status=!resolved">' . __( 'View all on Bitbucket\'s site', 'bim' ) .'</a>';
 
 }
