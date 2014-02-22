@@ -8,6 +8,7 @@ Description:		Adds useful widgets to track your recent bitbucket issues. I prete
 Version:			0.8.2
 Author:				Gabriel Gil
 Author URI:			http://gabrielgil.es/
+Text Domain:		bim
 License:			GPLv2 or later
 License URI:		http://www.gnu.org/licenses/gpl-2.0.html
 GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
@@ -66,12 +67,9 @@ GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 
 **************************************************************************/
 
-
-function myplugin_init() {
+add_action('plugins_loaded', function () {
 	load_plugin_textdomain( 'bim', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-add_action('plugins_loaded', 'myplugin_init');
-
+});
 
 
 /*************************************************************************
@@ -155,7 +153,7 @@ if ( !get_option( 'bim-username' ) || !get_option( 'bim-repository' ) )
 	{
 		?>
 	    <div class="updated">
-	        <p><?php printf( __( 'Config Bitbucket username and the repository you want to track under Settings, General options page!', 'bim' ), site_url('/wp-admin/options-general.php') . '#bim' ); ?></p>
+	        <p><?php _e( 'Config Bitbucket username and the repository you want to track under Settings, General options page!', 'bim' ); ?></p>
 	    </div>
 	    <?php
 	});

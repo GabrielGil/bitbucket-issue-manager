@@ -16,7 +16,6 @@ function bitbucket_pending_issues_content()
     if ( $all_issues->count < 1 )
     {
 	    echo '<h4>' . __( 'No pending issues.', 'bim') . '</h4><p>' . __( 'Nothing to do! Add issues on your Bitbucket repository page.', 'bim' ) . '</p>';
-	    // echo '<h4>' . __( 'No pending issues.') . '</h4><p>Visita la página de incidencias del proyecto que has indicado en la página de opciones y tenlas a un vistazo de tu Wordpress.</p>';
 		return;
     
     } elseif ( $all_issues->count > 0 )
