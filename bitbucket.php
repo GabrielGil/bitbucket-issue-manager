@@ -63,6 +63,17 @@ GitHub Plugin URI:	gabrielgil/bitbucket-issue-manager
 
 /*************************************************************************
 
+						REQUIRES
+
+**************************************************************************/
+
+require_once( 'class/bitbucket.general.php' );
+require_once( 'class/bitbucket.issue.php' );
+
+
+
+/*************************************************************************
+
 						LOCALIZATION
 
 **************************************************************************/
@@ -317,12 +328,24 @@ function file_get_contents_curl($url) {
 
 
 /*
- * Get BitBucket issue URL
+ * Get BitBucket endpoint
  *
- * Generates the URL for the given bitbucket issue ID
+ * Returns the bitbucket endpoint according API version
  */
 
-function get_bitbucket_issue_url ( $id )
-{
-	return 'https://bitbucket.org/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY ."/issue/$id/";
+function get_bitbucket_endpoint ( $version = 1 ) {
+
+	if ( $version==1 ) {
+		$version = 1;
+	} else {
+		$version = 2;
+	}
+	return "https://bitbucket.org/api/$version.0";
 }
+
+function get_bitbucket_issues_admin () {
+	return 'https://bitbucket.org/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/admin/issues';
+}
+
+
+

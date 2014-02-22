@@ -9,41 +9,26 @@
 function bitbucket_resolved_issues_content()
 {
 	
-    $bitbucket_request_uri = 'https://bitbucket.org/api/1.0/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/issues?status=resolved';
-    $all_issues = json_decode(file_get_contents_curl($bitbucket_request_uri));
-    
-    // Shows info if there is any issue right now.
-    if ( $all_issues->count < 1 )
-    {
-	    echo '<h4>No hay incidencias resueltas.</h4><p>Visita la página de incidencias del proyecto que has indicado en la página de opciones y tenlas a un vistazo de tu Wordpress.</p>';
-		return;
-    
-    } elseif ( $all_issues->count > 0 )
-    {
-    
-	    // Just the last five (Delegate on the endpoint)
-	    $all_issues = array_slice($all_issues->issues, 0, 5);
-	    
-	    // Display it up
-	    echo '<ul>';
-	    
-	    foreach ($all_issues as $issue) {
-	    	echo '<li>';
-	    	echo '<p>';
-	    	echo '<span style="float:right;" ><strong>' . human_time_diff(strtotime($issue->created_on)) . '</strong></span>';
-			echo '<a>' . $issue->title . '</a>' . '<br />';
-			echo $issue->content;
-			echo '</p>';
-			echo '</li>';
-	    }
-		
-		echo '<ul>';
-		
-		echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/gabrielgil/odd-barcelona/issues">Ver todas en Bitbucket</a>';
+    // Fetch non resolved issues
+	$issues = Bitbucket_Issue::get_issues( 'resolved' );
 	
-	} else
-	{
-		echo '<h4>No se qué ha pasado, pero no ha pasado nada y ese es el problema. ¿?</h4>';
+	//echo '<pre>'.print_r($issues, true) . '</pre>';
+	
+	// Display errors
+    if ( Bitbucket::echo_errors( $issues ) == 1 ) {
+	    return;
+    }
+    
+    
+    if ( count($issues->issues) < 1 )
+    {
+	    echo '<h4>' . __( 'No pending issues.', 'bim') . '</h4><p>' . __( 'Nothing to do! Add issues on your Bitbucket repository page.', 'bim' ) . '</p>';
 		return;
-	}
+    
+    }
+    
+	// List issues
+	Bitbucket_Issue::print_dashboard_issue_listing( $issues );
+		
+	echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues?status=resolved">Ver todas en Bitbucket</a>';
 }

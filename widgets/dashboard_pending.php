@@ -6,48 +6,29 @@
  * Retrieves the issues and generate the widget content's html.
  */
 
-function bitbucket_pending_issues_content()
-{
+function bitbucket_pending_issues_content() {
+
+	// Fetch non resolved issues
+	$issues = Bitbucket_Issue::get_issues( '!resolved' );
 	
-	$bitbucket_request_uri = 'https://bitbucket.org/api/1.0/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/issues?status=!resolved';
-    $all_issues = json_decode(file_get_contents_curl($bitbucket_request_uri));
+	//echo '<pre>'.print_r($issues, true) . '</pre>';
+	
+	// Display errors
+    if ( Bitbucket::echo_errors( $issues ) == 1 ) {
+	    return;
+    }
     
-    // Shows info if there is any issue right now.
-    if ( $all_issues->count < 1 )
+    
+    if ( count($issues->issues) < 1 )
     {
 	    echo '<h4>' . __( 'No pending issues.', 'bim') . '</h4><p>' . __( 'Nothing to do! Add issues on your Bitbucket repository page.', 'bim' ) . '</p>';
 		return;
     
-    } elseif ( $all_issues->count > 0 )
-    {
+    }
     
-	    // Just the last five (Delegate on the endpoint)
-	    $all_issues = array_slice($all_issues->issues, 0, 4);
-	    
-	    // Display it up
-	    echo '<ul>';
-	    
-	    $first_issue = true;
-	    
-	    foreach ($all_issues as $issue) {
-	    	echo '<li>';
-	    	echo '<p>';
-	    	echo '<span style="float:right;" ><strong>' . human_time_diff(strtotime($issue->created_on)) . '</strong></span>';
-			echo '<a href="' . get_bitbucket_issue_url( $issue->local_id ) . '" target="_blank">' . $issue->title . '</a>' . '<br />';
-			echo $first_issue ? $issue->content : '';
-			echo '</p>';
-			echo '</li>';
-			
-			$first_issue = false;
-	    }
+	// List issues
+	Bitbucket_Issue::print_dashboard_issue_listing( $issues );
 		
-		echo '<ul>';
-		
-		echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues">Ver todas en Bitbucket</a>';
-	
-	} else
-	{
-		echo '<h4>No se qué ha pasado, pero no ha pasado nada y ese es el problema. ¿?</h4>';
-		return;
-	}
+	echo '<a target="_blank" style="" class="button-secondary" href="http://bitbucket.com/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY .'/issues?status=!resolved">Ver todas en Bitbucket</a>';
+
 }
