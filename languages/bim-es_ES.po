@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Bitbucket Issue Manager v0.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-22 20:53:47+0000\n"
+"PO-Revision-Date: 2014-02-22 21:02:13+0000\n"
 "Last-Translator: gabriel <gabriel@gabrielgil.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -92,4 +92,19 @@ msgstr "No hay incidencias resueltas."
 #@ bim
 msgid "You didn't solved anything! Resolve issues on your Bitbucket repository page."
 msgstr "No has hecho nada! Resuelve alguna incidencia en tu repositorio de Bitbucket."
+
+#: bitbucket.php:110
+#@ bim
+msgid "Bitbucket Issue Manager Settings"
+msgstr "Configuración de Bitbucket Issue Manager"
+
+#: bitbucket.php:118
+#@ bim
+msgid "BitBucket Username"
+msgstr "Usuario de Bitbucket"
+
+#: bitbucket.php:128
+#@ bim
+msgid "BitBucket Repository"
+msgstr "Repositorio de Bitbucket"
 

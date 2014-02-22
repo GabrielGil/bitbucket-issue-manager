@@ -9,7 +9,7 @@
 function bitbucket_pending_issues_content() {
 
 	// Fetch non resolved issues
-	$issues = Bitbucket_Issue::get_issues( '!resolved' );
+	$issues = Bitbucket_Issue::get_issues( 'open' );
 	
 	//echo '<pre>'.print_r($issues, true) . '</pre>';
 	

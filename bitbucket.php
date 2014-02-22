@@ -107,7 +107,7 @@ add_action( 'admin_init', function ()
  	// fields to it
  	add_settings_section(
 		'bim-settings-section',
-		'Bitbucket Issue Manager Settings',
+		__( 'Bitbucket Issue Manager Settings', 'bim' ),
 		'bim_setting_section_callback',
 		'general'
 	);
@@ -115,7 +115,7 @@ add_action( 'admin_init', function ()
 	// Add the username field
 	add_settings_field(
 		'bim-username',
-		'BitBucket Username',
+		__( 'BitBucket Username', 'bim' ),
 		'bim_username_field_callback',
 		'general',
 		'bim-settings-section'
@@ -125,7 +125,7 @@ add_action( 'admin_init', function ()
 	
 	add_settings_field(
 		'bim-repository',
-		'BitBucket Repository',
+		__( 'BitBucket Repository', 'bim' ),
 		'bim_repository_field_callback',
 		'general',
 		'bim-settings-section'
