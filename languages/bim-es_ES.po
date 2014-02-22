@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Bitbucket Issue Manager v0.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-22 21:02:13+0000\n"
+"PO-Revision-Date: 2014-02-22 21:28:27+0000\n"
 "Last-Translator: gabriel <gabriel@gabrielgil.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: bitbucket.php:167
 #@ bim
 msgid "Config Bitbucket username and the repository you want to track under Settings, General options page!"
-msgstr "Configura tu <b>usuario</b> y <b>repositorio</b> en la página de Ajustes > <a href=\"http://gabrielgil.es\">General</a>."
+msgstr "Configura tu <b>usuario</b> y <b>repositorio</b> en la página de Ajustes > <a href=\"%s\">General</a>."
 
 #: bitbucket.php:183
 #@ bim

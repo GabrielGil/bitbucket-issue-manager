@@ -4,7 +4,7 @@ Donate link: http://goo.gl/v9CW1R
 Tags: bitbucket, widgets, dashboard,
 Requires at least: 3
 Tested up to: 3.8.1
-Stable tag: 0.8.2
+Stable tag: 0.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,10 @@ Please, make sure your repository issues are public.
 
 = 0.8.3 =
 * Now the issue date is shown using `human_diff_time()`. (e.g. *5 hours ago* instead *02-18-2013*)
+* Shows updated *n* time ago
+* Fully localized
+* Internal performance issues
+* Solves some php strict errors
 
 = 0.8.2 =
 * Fixes a misspelled opdtion name and properly deletes it (Will stop deleting the wrong name
@@ -82,6 +86,9 @@ that version).
 * First stable version with Settings API
 
 == Upgrade Notice ==
+
+= 0.8.3 =
+Now BIM is fully localized. Also some new features about handle errors, or missing config.
 
 = 0.8.2 =
 Notices the user on the Dashboard if the username or repository name are not set.
