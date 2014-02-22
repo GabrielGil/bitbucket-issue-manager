@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bitbucket Issue Manager v0.8.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-02-22 18:24:21+0000\n"
+"Last-Translator: gabriel <gabriel@gabrielgil.es>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: bitbucket.php:158
+#@ bim
+msgid "Config Bitbucket username and the repository you want to track under Settings, General options page!"
+msgstr "Configura tu <b>usuario</b> y <b>repositorio</b> en la página de Ajustes > <a href=\"http://gabrielgil.es\">General</a>."
+
+#: bitbucket.php:174
+#@ bim
+msgid "Here you can set you BitBucket username and the repository you want manage."
+msgstr "Aquí puedes configurar tu usuario y repositorio de BitBucket."
+
+#: bitbucket.php:237
+#@ bim
+msgid "Last solved issues"
+msgstr "Ultimas incidencias resueltas"
+
+#: bitbucket.php:243
+#@ bim
+msgid "Last pending issues"
+msgstr "Últimas incidencias pendientes"
+
+#: bitbucket.php:285
+#@ bim
+msgid "Settings"
+msgstr "Ajustes"
+
+#: widgets/dashboard_pending.php:18
+#@ bim
+msgid "No pending issues."
+msgstr "No hay incidencias pendientes."
+
+#: widgets/dashboard_pending.php:18
+#@ bim
+msgid "Nothing to do! Add issues on your Bitbucket repository page."
+msgstr "Nada que hacer! Añade incidencias en tu repositorio de Bitbucket."
+
