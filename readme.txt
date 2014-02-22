@@ -1,7 +1,7 @@
 === Bitbucket Issue Manager ===
 Contributors: gabrielbs
 Donate link: http://goo.gl/v9CW1R
-Tags: bitbucket, widgets, dashboard,
+Tags: bitbucket, widget, widgets, shortcode, dashboard, admin
 Requires at least: 3
 Tested up to: 3.8.1
 Stable tag: 0.8.3
@@ -12,7 +12,7 @@ Check your latest issues from BitBucket directly on your WordPress dashboard.
 
 == Description ==
 
-= What's this? ==
+= What's this? =
 
 This plugins just aims to be a simple solution to check your project issues or tasks on hold, and completed right inside your WordPress dashboard. However, i pretend to add some extra features soon as shown at the bottom of this section.
 
@@ -21,7 +21,7 @@ At the moment, there are two dashboard widgets available after install:
 * Recently opened issues
 * Recently closed issues
 
-== Upcoming ==
+= Upcoming =
 
 * Issue listing page.
 * Front-end widget
