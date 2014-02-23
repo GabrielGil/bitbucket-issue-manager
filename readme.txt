@@ -36,7 +36,12 @@ You can also wirte me directly at hello (at) gabrielgil (dot) es
 
 = Translations =
 
-Righ now this plugins is in process to be full compatible with locations, but it's available in `en_US` by default.
+The following translations are available since version 0.8.3
+
+* English US
+* Spanish (Spain)
+
+If you want to contribute translating this plugin to your lang, please open an issue on GitHub plugin's page.
 
 == Installation ==
 
