@@ -53,7 +53,7 @@ class Bitbucket_Issue {
 	    	echo '<li>';
 	    	echo '<p>';
 	    	echo '<span style="float:right;" >
-	    			<strong>' . human_time_diff(strtotime($issue->created_on)) . '</strong>' . '</span>';
+	    			<strong>' . human_time_diff(strtotime($issue->utc_created_on)) . '</strong>' . '</span>';
 			echo '<a href="' . Bitbucket_Issue::get_bitbucket_issue_url( $issue->local_id ) . '" target="_blank">' . $issue->title . '</a>'
 					. ' ('. human_time_diff(strtotime($issue->utc_last_updated)) . ')'. '<br />';
 			echo $first_issue ? $issue->content : '';
