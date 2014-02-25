@@ -19,7 +19,7 @@ class Bitbucket_Issue {
 	
 	static function get_issues ( $status='open', $limit=5 ) {
 	
-		$bitbucket_request_uri = get_bitbucket_endpoint() . '/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . "/issues?status=$status&limit=$limit";
+		$bitbucket_request_uri = get_bitbucket_endpoint() . '/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . "/issues?status=$status&sort=-utc_last_updated&limit=$limit";
 	    return json_decode(file_get_contents_curl($bitbucket_request_uri));
 	}
 	
