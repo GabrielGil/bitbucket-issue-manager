@@ -68,6 +68,9 @@ Please, make sure your repository issues are public.
 
 == Changelog ==
 
+= 0.8.4 =
+* Order by Last Updated Time
+
 = 0.8.3 =
 * Now the issue date is shown using `human_diff_time()`. (e.g. *5 hours ago* instead *02-18-2013*)
 * Shows updated *n* time ago
