@@ -1,0 +1,8 @@
+
+.priority.major {
+	border: 1px solid #DD3D36;
+	padding: 0 0.4rem;
+	background-color: #FFEBE8;
+	color: #BB312B;
+	font-size: .6rem;
+}
