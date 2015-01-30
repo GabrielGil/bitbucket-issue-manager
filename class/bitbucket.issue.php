@@ -4,51 +4,52 @@
 /**
 * Bitbucket Issue Class
 */
-class Bitbucket_Issue {
+class Bitbucket_Issue
+{
 
-	function __construct () {
-		
-	}
-	
-	
 	/*
 	 * Get BitBucket issues
 	 *
 	 * Returns and array with all the issues
 	 */
-	
-	static function get_issues ( $status='open', $limit=5 ) {
-	
-		$bitbucket_request_uri = get_bitbucket_endpoint() . '/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . "/issues?status=$status&sort=-utc_last_updated&limit=$limit";
-	    return json_decode(file_get_contents_curl($bitbucket_request_uri));
+	static function get_issues ( $status='open', $limit=5 )
+	{
+		$bitbucket_request_uri = get_bitbucket_endpoint() . '/repositories/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . "/issues";
+		$params = array(
+			'status' => $status,
+			'sort'   => '-utc_last_updated',
+			'limit'  => $limit
+		);
+		$response = wp_remote_get($bitbucket_request_uri, $params);
+	    return json_decode($response['body']);
 	}
-	
-	
+
+
 	/*
 	 * Get BitBucket issue URL
 	 *
 	 * Generates the URL for the given bitbucket issue ID
 	 */
-	
+
 	static function get_bitbucket_issue_url ( $id ) {
-	
+
 		return 'https://bitbucket.org/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY ."/issue/$id/";
 	}
-	
-	
+
+
 	/**
 	 * Print Dashboard Issue Listing
 	 *
 	 * Prints all the issues
 	 */
-	
+
 	static function print_dashboard_issue_listing ( $issues ) {
-	
+
 		// Display it up
 	    echo '<ul>';
-	    
+
 	    $first_issue = true;
-	    
+
 	    foreach ($issues->issues as $issue) {
 	    	echo '<li>';
 	    	echo '<p>';
@@ -59,12 +60,12 @@ class Bitbucket_Issue {
 			echo $first_issue ? $issue->content : '';
 			echo '</p>';
 			echo '</li>';
-			
+
 			$first_issue = false;
 	    }
-		
+
 		echo '<ul>';
-		
+
 	}
 
 }

@@ -310,8 +310,8 @@ add_filter('plugin_action_links', function ($links, $file) {
  *
  * Retrieves the content of the given URL using CURL
  */
-
-function file_get_contents_curl($url) {
+function file_get_contents_curl($url)
+{
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -332,8 +332,8 @@ function file_get_contents_curl($url) {
  *
  * Returns the bitbucket endpoint according API version
  */
-
-function get_bitbucket_endpoint ( $version = 1 ) {
+function get_bitbucket_endpoint($version = 1)
+{
 
 	if ( $version==1 ) {
 		$version = 1;
@@ -343,7 +343,8 @@ function get_bitbucket_endpoint ( $version = 1 ) {
 	return "https://bitbucket.org/api/$version.0";
 }
 
-function get_bitbucket_issues_admin () {
+function get_bitbucket_issues_admin ()
+{
 	return 'https://bitbucket.org/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/admin/issues';
 }
 
