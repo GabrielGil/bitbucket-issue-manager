@@ -305,27 +305,6 @@ add_filter('plugin_action_links', function ($links, $file) {
 
 **************************************************************************/
 
-/*
- * File Get Contents using CURLS
- *
- * Retrieves the content of the given URL using CURL
- */
-function file_get_contents_curl($url)
-{
-	$ch = curl_init();
-
-	curl_setopt($ch, CURLOPT_HEADER, 0);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set curl to return the data instead of printing it to the browser.
-	curl_setopt($ch, CURLOPT_URL, $url);
-
-	$data = curl_exec($ch);
-
-	//var_dump($data);
-	curl_close($ch);
-
-	return $data;
-}
-
 
 /*
  * Get BitBucket endpoint
