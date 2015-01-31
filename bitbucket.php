@@ -210,10 +210,12 @@ if ( function_exists('register_uninstall_hook') )
 	register_uninstall_hook( __FILE__, 'uninstall_bim');
 
 // Callback function
-function uninstall_bim() {
+function uninstall_bim()
+{
 	//if uninstall not called from WordPress exit
-	if ( !defined( 'WP_UNINSTALL_PLUGIN' ) )
-	    exit();
+	if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+		//exit();
+	}
 
 	// For Single site
 	if ( !is_multisite() )
@@ -326,6 +328,3 @@ function get_bitbucket_issues_admin ()
 {
 	return 'https://bitbucket.org/' . BITBUCKET_USERNAME . '/' . BITBUCKET_REPOSITORY . '/admin/issues';
 }
-
-
-
