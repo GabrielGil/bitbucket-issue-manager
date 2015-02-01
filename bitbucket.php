@@ -206,8 +206,9 @@ define('BITBUCKET_REPOSITORY',	get_option( 'bim-repository' ));
  */
 
 // Register the hook
-if ( function_exists('register_uninstall_hook') )
+if ( function_exists('register_uninstall_hook') ) {
 	register_uninstall_hook( __FILE__, 'uninstall_bim');
+}
 
 // Callback function
 function uninstall_bim()
